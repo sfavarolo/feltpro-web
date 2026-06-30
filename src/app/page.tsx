@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 
 // The Flutter timer app (separate Vercel project). Update if you add a custom
 // domain like https://app.feltpro.com.
-const APP_URL = "https://feltpro.vercel.app";
+const APP_URL = "https://app.feltpro.app";
 
 const features: { title: string; body: string; icon: string }[] = [
   {
