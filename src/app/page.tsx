@@ -6,6 +6,11 @@ const APP_URL = "https://app.feltpro.app";
 
 const features: { title: string; body: string; icon: string }[] = [
   {
+    icon: "📱",
+    title: "Remote Control — new",
+    body: "Run the floor from your phone: pause the clock, add time, record rebuys and add-ons, update player counts — with the live clock in your hand. Included with Multi+.",
+  },
+  {
     icon: "🖥️",
     title: "Runs on any screen",
     body: "Web-based — no install, no updates to chase. Open it on a laptop, tablet, or cast it to the big TV in the room.",
@@ -89,6 +94,7 @@ const tiers: Tier[] = [
     href: APP_URL,
     points: [
       "Everything in Multi",
+      "Remote Control — run the floor from your phone",
       "Sponsors + sponsor strip on breaks",
       "Custom casino / event logos",
       "Saved tournament library",
@@ -121,6 +127,7 @@ const compare: { group: string; rows: Row[] }[] = [
   {
     group: "Power features",
     rows: [
+      { label: "Remote Control from your phone", single: false, multi: false, plus: true },
       { label: "Saved tournament library", single: false, multi: false, plus: true },
       { label: "Import / export tournaments", single: false, multi: false, plus: true },
       { label: "PDF / CSV export", single: false, multi: false, plus: true },
@@ -130,6 +137,10 @@ const compare: { group: string; rows: Row[] }[] = [
 ];
 
 const faqs: { q: string; a: string }[] = [
+  {
+    q: "What is Remote Control?",
+    a: "A Multi+ feature that turns your phone into the tournament director's remote. Pause or resume the clock, add time, record rebuys and add-ons, and update player counts from anywhere in the room — with the live level, blinds and countdown right on your phone. It runs in your phone's browser; nothing to install.",
+  },
   {
     q: "How does per-event pricing work?",
     a: "For one-off tournaments, pay $1 per player with a $10 minimum — so a 25-player event is $25. No subscription required.",
@@ -191,6 +202,9 @@ export default function Home() {
             <a href="#features" className="hidden text-white/70 hover:text-white sm:block">
               Features
             </a>
+            <a href="#remote" className="hidden text-white/70 hover:text-white sm:block">
+              Remote
+            </a>
             <a href="#pricing" className="text-white/70 hover:text-white">
               Pricing
             </a>
@@ -209,16 +223,24 @@ export default function Home() {
 
       {/* Hero */}
       <Section id="top" className="pt-20 pb-16 text-center sm:pt-28">
-        <span className="inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-300">
-          Tournament Poker Timer
-        </span>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <span className="inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-300">
+            Tournament Poker Timer
+          </span>
+          <a
+            href="#remote"
+            className="inline-block rounded-full bg-emerald-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-black transition hover:bg-emerald-400"
+          >
+            New · Run it from your phone
+          </a>
+        </div>
         <h1 className="mx-auto mt-6 max-w-3xl text-5xl font-black leading-[1.05] tracking-tight sm:text-7xl">
           Run a poker tournament <span className="text-emerald-400">that looks pro.</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
           FeltPro is the web-based blind timer for home games, charity nights, and
-          casino floors. Sponsors, custom branding, cloud sync — on any screen,
-          no install.
+          casino floors. Phone remote control, sponsors, custom branding, cloud
+          sync — on any screen, no install.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
@@ -237,6 +259,96 @@ export default function Home() {
         <p className="mt-5 text-sm text-white/40">
           Works on laptop, tablet, or the big TV in the room.
         </p>
+      </Section>
+
+      {/* Remote Control spotlight */}
+      <Section id="remote" className="py-16">
+        <div className="overflow-hidden rounded-3xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/[0.08] via-transparent to-transparent">
+          <div className="grid items-center gap-10 p-8 sm:p-12 lg:grid-cols-2">
+            <div>
+              <span className="inline-block rounded-full bg-emerald-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-black">
+                New
+              </span>
+              <h2 className="mt-5 text-4xl font-black leading-tight tracking-tight sm:text-5xl">
+                The clock on the big screen.{" "}
+                <span className="text-emerald-400">The controls in your pocket.</span>
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-white/60">
+                FeltPro Remote turns your phone into the tournament
+                director&apos;s remote. Pause and resume the clock, add time,
+                record rebuys and add-ons, and update player counts — from
+                anywhere on the floor, in about a second.
+              </p>
+              <ul className="mt-7 space-y-3 text-white/70">
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>
+                    Live level, blinds and countdown on your phone — with a
+                    connection indicator so you know commands will land
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>
+                    No app store, nothing to install — add it to your home
+                    screen straight from the browser
+                  </span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>Every action is logged to the tournament record</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>
+                    End Tournament is deliberately not on the remote — a stray
+                    tap in your pocket can&apos;t end your event
+                  </span>
+                </li>
+              </ul>
+              <p className="mt-7 text-sm font-semibold text-emerald-300">
+                Included with Multi+
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-[300px] rounded-[2.6rem] border border-white/15 bg-black p-3 shadow-2xl shadow-emerald-500/10">
+                <div className="rounded-[2rem] bg-[#0b0b0f] p-4">
+                  <div className="mx-auto mb-4 h-1.5 w-24 rounded-full bg-white/15" />
+                  <div className="rounded-2xl bg-white/[0.05] p-4 text-center">
+                    <p className="text-[10px] uppercase tracking-wider text-white/40">
+                      Vanderbilt Poker Tournament
+                    </p>
+                    <p className="mt-1 text-sm font-extrabold">
+                      Level 8 · $1,000 / $2,000
+                    </p>
+                    <p className="mt-1 text-4xl font-black tabular-nums">12:01</p>
+                    <div className="mt-2 flex items-center justify-center gap-2 text-[10px]">
+                      <span className="rounded-full bg-emerald-500 px-2 py-0.5 font-bold text-black">
+                        RUNNING
+                      </span>
+                      <span className="text-white/40">8 left</span>
+                    </div>
+                    <p className="mt-2 flex items-center justify-center gap-1.5 text-[10px] text-white/40">
+                      <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      Laptop connected
+                    </p>
+                  </div>
+                  <div className="mt-3 grid grid-cols-2 gap-2 text-center text-xs font-extrabold">
+                    <div className="rounded-xl bg-amber-500 py-4 text-black">PAUSE</div>
+                    <div className="rounded-xl bg-emerald-500 py-4 text-black">RESUME</div>
+                    <div className="rounded-xl bg-sky-700 py-4">+1 MIN</div>
+                    <div className="rounded-xl bg-sky-700 py-4">+5 MIN</div>
+                    <div className="rounded-xl bg-violet-600 py-4">REBUY (4)</div>
+                    <div className="rounded-xl bg-violet-600 py-4">ADD-ON (2)</div>
+                    <div className="col-span-2 rounded-xl bg-slate-700 py-4">
+                      PLAYERS LEFT
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </Section>
 
       {/* Feature grid */}
