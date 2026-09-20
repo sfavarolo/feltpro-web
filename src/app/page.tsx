@@ -8,7 +8,7 @@ const features: { title: string; body: string; icon: string }[] = [
   {
     icon: "📱",
     title: "Remote Control — new",
-    body: "Run the floor from your phone: pause the clock, add time, record rebuys and add-ons, update player counts — with the live clock in your hand. Included with Multi+.",
+    body: "Run the floor from your phone: pause the clock, add time, record rebuys and add-ons, update player counts — with the live clock in your hand. Included with Pro and every Event Pass.",
   },
   {
     icon: "🖥️",
@@ -22,8 +22,8 @@ const features: { title: string; body: string; icon: string }[] = [
   },
   {
     icon: "🏷️",
-    title: "Your brand, your sponsors",
-    body: "Add your casino or event logo and rotate sponsor logos — including a sponsor strip that runs during breaks.",
+    title: "Your name on the clock",
+    body: "Put your company, venue and event on the big screen, with your own splash image while players find their seats.",
   },
   {
     icon: "☁️",
@@ -32,13 +32,13 @@ const features: { title: string; body: string; icon: string }[] = [
   },
   {
     icon: "💸",
-    title: "Pay per event — or subscribe",
-    body: "Running one charity night? Pay $1/player. Running rooms every week? Subscribe and run unlimited tournaments.",
+    title: "Free for home games",
+    body: "Up to 10 players is free, for as many games as you like. Running a charity night? Buy one Event Pass. Running events all year? Go Pro.",
   },
   {
     icon: "📄",
-    title: "Save, import & export",
-    body: "Keep a library of recurring structures, duplicate last week's event, and export results to PDF or CSV.",
+    title: "A record you can trust",
+    body: "Every rebuy, add-on and level change is logged with its time. Correct a finished event without re-running it, and every revision is kept as a locked copy.",
   },
 ];
 
@@ -56,82 +56,88 @@ type Tier = {
 
 const tiers: Tier[] = [
   {
-    name: "Single Event",
-    tagline: "Run one tournament.",
-    price: "$1",
-    unit: "/ player",
-    sub: "$10 minimum · pay per tournament",
-    cta: "Start an event",
+    name: "Home Game",
+    tagline: "One table, friends, no card.",
+    price: "Free",
+    unit: "",
+    sub: "up to 10 players · as many games as you like",
+    cta: "Start free",
     href: APP_URL,
     points: [
-      "One live tournament",
       "Full blind timer, breaks & antes",
+      "Rebuys, add-ons and chips in play",
+      "Winners card at the end of the night",
       "Cloud sync across your devices",
     ],
   },
   {
-    name: "Multi",
-    tagline: "For regular organizers.",
-    price: "$19.95",
-    unit: "/ mo",
-    sub: "or $149 / yr — save ~2 months",
-    cta: "Start Multi",
+    name: "Event Pass",
+    tagline: "One event, no subscription.",
+    price: "$49",
+    unit: "/ event",
+    sub: "up to 30 players · $89 up to 75 · $149 unlimited",
+    cta: "Run one event",
+    href: APP_URL,
+    points: [
+      "Every Pro feature, for one tournament",
+      "Remote Control included",
+      "Buy it now, use it when the event comes",
+      "Four or more events a year? Pro costs less",
+    ],
+  },
+  {
+    name: "Pro",
+    tagline: "For venues and regular organizers.",
+    price: "$349",
+    unit: "/ yr",
+    sub: "unlimited tournaments · any number of players",
+    cta: "Go Pro",
     href: APP_URL,
     featured: true,
     points: [
-      "Unlimited live tournaments",
-      "Full blind timer, breaks & antes",
-      "Cloud sync across your devices",
-    ],
-  },
-  {
-    name: "Multi+",
-    tagline: "Everything, for venues.",
-    price: "$39.95",
-    unit: "/ mo",
-    sub: "or $349 / yr — save ~2 months",
-    cta: "Go Multi+",
-    href: APP_URL,
-    points: [
-      "Everything in Multi",
+      "Every feature, every tournament",
       "Remote Control — run the floor from your phone",
-      "Sponsors + sponsor strip on breaks",
-      "Custom casino / event logos",
-      "Saved tournament library",
-      "Import / export + PDF / CSV",
-      "Priority support",
+      "Your company, venue and splash image on the clock",
+      "Dealers, final table and finishing places",
+      "Full tournament report with money raised",
+      "Corrections, audit trail, locked copies & export",
     ],
   },
 ];
 
-type Row = { label: string; single: Cell; multi: Cell; plus: Cell };
+type Row = { label: string; free: Cell; pass: Cell; pro: Cell };
 type Cell = boolean | string;
 
 const compare: { group: string; rows: Row[] }[] = [
   {
     group: "Running tournaments",
     rows: [
-      { label: "Live blind timer (levels, breaks, antes)", single: true, multi: true, plus: true },
-      { label: "Tournaments", single: "1 event", multi: "Unlimited", plus: "Unlimited" },
-      { label: "Full-screen clock / big-screen mode", single: true, multi: true, plus: true },
-      { label: "Cloud sync across devices", single: true, multi: true, plus: true },
+      { label: "Live blind timer (levels, breaks, antes)", free: true, pass: true, pro: true },
+      { label: "Players", free: "Up to 10", pass: "30 / 75 / unlimited", pro: "Unlimited" },
+      { label: "Tournaments", free: "Unlimited", pass: "1 event", pro: "Unlimited" },
+      { label: "Rebuys, add-ons and chips in play", free: true, pass: true, pro: true },
+      { label: "Winners and payouts", free: true, pass: true, pro: true },
+      { label: "Cloud sync across devices", free: true, pass: true, pro: true },
     ],
   },
   {
-    group: "Branding",
+    group: "On the big screen",
     rows: [
-      { label: "Custom casino / event logo", single: false, multi: false, plus: true },
-      { label: "Sponsors + sponsor strip on breaks", single: false, multi: false, plus: true },
+      { label: "Your company and venue name", free: false, pass: true, pro: true },
+      { label: "Custom splash image", free: false, pass: true, pro: true },
+      { label: "Estimated finish time", free: false, pass: true, pro: true },
+      { label: "Total money raised", free: false, pass: true, pro: true },
+      { label: "No “Powered by FeltPro” mark on the clock", free: false, pass: true, pro: true },
     ],
   },
   {
-    group: "Power features",
+    group: "Running the floor",
     rows: [
-      { label: "Remote Control from your phone", single: false, multi: false, plus: true },
-      { label: "Saved tournament library", single: false, multi: false, plus: true },
-      { label: "Import / export tournaments", single: false, multi: false, plus: true },
-      { label: "PDF / CSV export", single: false, multi: false, plus: true },
-      { label: "Priority support", single: false, multi: false, plus: true },
+      { label: "Remote Control from your phone", free: false, pass: true, pro: true },
+      { label: "Dealers and staff, with final-table dealer", free: false, pass: true, pro: true },
+      { label: "Final table and finishing places", free: false, pass: true, pro: true },
+      { label: "Full tournament report", free: false, pass: true, pro: true },
+      { label: "Corrections, audit trail, locked copies & export", free: false, pass: true, pro: true },
     ],
   },
 ];
@@ -139,11 +145,19 @@ const compare: { group: string; rows: Row[] }[] = [
 const faqs: { q: string; a: string }[] = [
   {
     q: "What is Remote Control?",
-    a: "A Multi+ feature that turns your phone into the tournament director's remote. Pause or resume the clock, add time, record rebuys and add-ons, and update player counts from anywhere in the room — with the live level, blinds and countdown right on your phone. It runs in your phone's browser; nothing to install.",
+    a: "Included with Pro and every Event Pass, it turns your phone into the tournament director's remote. Pause or resume the clock, add time, record rebuys and add-ons, and update player counts from anywhere in the room — with the live level, blinds and countdown right on your phone. It runs in your phone's browser; nothing to install.",
   },
   {
-    q: "How does per-event pricing work?",
-    a: "For one-off tournaments, pay $1 per player with a $10 minimum — so a 25-player event is $25. No subscription required.",
+    q: "What is free?",
+    a: "Home games of up to 10 players, as many as you like, with the full blind timer, rebuys and add-ons, chips in play, and a winners card at the end. No card needed. The operator features are there to see, with a lock on them.",
+  },
+  {
+    q: "How does the Event Pass work?",
+    a: "It is a one-off payment that unlocks every feature for one tournament: $49 for up to 30 players, $89 for up to 75, $149 for any number. Buy it whenever you like and use it when you set the event up. No subscription, nothing renews.",
+  },
+  {
+    q: "Event Pass or Pro?",
+    a: "Pro is $349 a year for unlimited tournaments of any size. If you run four or more events a year, Pro costs less than buying passes. It renews yearly and you can cancel the renewal at any time.",
   },
   {
     q: "Do I need to install anything?",
@@ -151,7 +165,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Can I use it commercially (a casino or paid events)?",
-    a: "Yes. The Multi and Multi+ plans are built for venues and revenue-generating events. Need a chain or custom terms? Talk to us.",
+    a: "Yes. Pro and the Event Pass are built for venues and revenue-generating events. Need a chain or custom terms? Talk to us.",
   },
   {
     q: "Will my tournaments sync between devices?",
@@ -239,7 +253,7 @@ export default function Home() {
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
           FeltPro is the web-based blind timer for home games, charity nights, and
-          casino floors. Phone remote control, sponsors, custom branding, cloud
+          casino floors. Phone remote control, your name on the clock, cloud
           sync — on any screen, no install.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -307,7 +321,7 @@ export default function Home() {
                 </li>
               </ul>
               <p className="mt-7 text-sm font-semibold text-emerald-300">
-                Included with Multi+
+                Included with Pro and every Event Pass
               </p>
             </div>
             <div className="flex justify-center">
@@ -374,8 +388,8 @@ export default function Home() {
             Simple pricing.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-white/60">
-            Pay per event when you need it, or subscribe to run unlimited
-            tournaments. No setup fees, cancel anytime.
+            Home games are free. Pay once for a single event, or go Pro and
+            run unlimited tournaments. No setup fees.
           </p>
         </div>
 
@@ -450,9 +464,9 @@ export default function Home() {
               <thead>
                 <tr className="text-left">
                   <th className="w-1/2 pb-4 font-medium text-white/50">Features</th>
-                  <th className="pb-4 text-center font-semibold">Single</th>
-                  <th className="pb-4 text-center font-semibold text-emerald-300">Multi</th>
-                  <th className="pb-4 text-center font-semibold">Multi+</th>
+                  <th className="pb-4 text-center font-semibold">Free</th>
+                  <th className="pb-4 text-center font-semibold">Event Pass</th>
+                  <th className="pb-4 text-center font-semibold text-emerald-300">Pro</th>
                 </tr>
               </thead>
               <tbody>
@@ -530,9 +544,9 @@ function FragmentGroup({ group, rows }: { group: string; rows: Row[] }) {
       {rows.map((r) => (
         <tr key={r.label} className="border-t border-white/[0.06]">
           <td className="py-3 pr-4 text-white/70">{r.label}</td>
-          <CellTd v={r.single} />
-          <CellTd v={r.multi} />
-          <CellTd v={r.plus} />
+          <CellTd v={r.free} />
+          <CellTd v={r.pass} />
+          <CellTd v={r.pro} />
         </tr>
       ))}
     </>

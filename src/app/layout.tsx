@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "FeltPro — Tournament Poker Timer",
   description:
-    "Run a poker tournament that looks pro. Web-based blind timer with sponsors, custom branding, cloud sync, and per-event pricing — on any screen.",
+    "Run a poker tournament that looks pro. Web-based blind timer with phone remote control and cloud sync — free for home games, on any screen.",
 };
 
 export default function RootLayout({
