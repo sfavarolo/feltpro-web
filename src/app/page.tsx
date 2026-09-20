@@ -169,7 +169,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Is it legal to run my poker event?",
-    a: "That depends on where you are and what kind of event it is, and it is the organizer's responsibility. FeltPro is timer and tournament-management software. It does not take, hold or pay out buy-ins, prizes or wagers, and it takes no share of any event. Rules for home games, charity nights and paid events differ by state and country, and some events need a licence or permit. Check your local rules before you run one.",
+    a: "FeltPro is not a legal service and cannot give legal advice. You are responsible for following all laws that apply to your event and its location. FeltPro is timer and tournament-management software: it does not take, hold or pay out buy-ins, prizes or wagers.",
   },
   {
     q: "Will my tournaments sync between devices?",
