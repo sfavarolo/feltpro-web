@@ -165,7 +165,11 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Can I use it commercially (a casino or paid events)?",
-    a: "Yes. Pro and the Event Pass are built for venues and revenue-generating events. Need a chain or custom terms? Talk to us.",
+    a: "Yes. Pro and the Event Pass are built for venues, fundraisers and paid events. Need a chain or custom terms? Talk to us.",
+  },
+  {
+    q: "Is it legal to run my poker event?",
+    a: "That depends on where you are and what kind of event it is, and it is the organizer's responsibility. FeltPro is timer and tournament-management software. It does not take, hold or pay out buy-ins, prizes or wagers, and it takes no share of any event. Rules for home games, charity nights and paid events differ by state and country, and some events need a licence or permit. Check your local rules before you run one.",
   },
   {
     q: "Will my tournaments sync between devices?",
@@ -520,7 +524,12 @@ export default function Home() {
             </span>
             <span>FeltPro</span>
           </div>
-          <p>© {new Date().getFullYear()} FeltPro. All rights reserved.</p>
+          <p className="max-w-xl text-center text-xs leading-5">
+            © {new Date().getFullYear()} FeltPro. All rights reserved. FeltPro
+            is tournament-management software. It does not take or handle
+            wagers, buy-ins or prizes. Organizers are responsible for following
+            the gaming laws that apply to their event.
+          </p>
           <a href={APP_URL} className="hover:text-white">
             Open app →
           </a>
