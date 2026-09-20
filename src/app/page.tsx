@@ -12,8 +12,8 @@ const features: { title: string; body: string; icon: string }[] = [
   },
   {
     icon: "🖥️",
-    title: "Runs on any screen",
-    body: "Web-based — no install, no updates to chase. Open it on a laptop, tablet, or cast it to the big TV in the room.",
+    title: "Mac, Windows, iPad — any screen",
+    body: "It runs in the browser, so it works on a Mac, a Windows PC, a Chromebook or a tablet. No install, no updates to chase. Cast it to the big TV in the room.",
   },
   {
     icon: "🎯",
@@ -162,6 +162,10 @@ const faqs: { q: string; a: string }[] = [
   {
     q: "Do I need to install anything?",
     a: "No. FeltPro runs in your browser on any device — laptop, tablet, or a TV browser. Sign in and you're running.",
+  },
+  {
+    q: "Is there a Mac version?",
+    a: "Yes — and an iPad, Chromebook and Windows one, because they are all the same thing. FeltPro runs in any modern browser, so there is nothing separate to download for a Mac. Your tournaments are saved to your account, so you can set up on one computer and run the event on another.",
   },
   {
     q: "Can I use it commercially?",
