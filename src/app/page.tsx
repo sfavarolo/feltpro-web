@@ -164,7 +164,7 @@ const faqs: { q: string; a: string }[] = [
     a: "No. FeltPro runs in your browser on any device — laptop, tablet, or a TV browser. Sign in and you're running.",
   },
   {
-    q: "Can I use it commercially (a casino or paid events)?",
+    q: "Can I use it commercially?",
     a: "Yes. Pro and the Event Pass are built for venues, fundraisers and paid events. Need a chain or custom terms? Talk to us.",
   },
   {
