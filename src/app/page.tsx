@@ -140,7 +140,7 @@ const compare: { group: string; rows: Row[] }[] = [
       { label: "Custom splash image", free: false, pass: true, pro: true },
       { label: "Estimated finish time", free: false, pass: true, pro: true },
       { label: "Total money raised", free: false, pass: true, pro: true },
-      { label: "No “Powered by FeltPro” mark on the clock", free: false, pass: true, pro: true },
+      { label: "No “Powered by FeltPro” mark on the big-screen clock", free: false, pass: true, pro: true },
     ],
   },
   {
@@ -167,7 +167,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "What is the players' clock?",
-    a: "A read-only clock any player can open by scanning a QR code — on a table tent or the TV. It shows the level, blinds and antes, time left, the next level, time to the break and players remaining. No sign-in and no buttons, and it never shows money or names. It is included on every plan, free included, and stops when the tournament ends.",
+    a: "A read-only clock any player can open by scanning a QR code — on a table tent or the TV. It shows the level, blinds and antes, time left, the next level, time to the break and players remaining. No sign-in and no buttons, and it never shows money or names. It is included on every plan, free included, carries a small “Powered by FeltPro” line on every plan, and stops when the tournament ends.",
   },
   {
     q: "What is free?",
