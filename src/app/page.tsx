@@ -11,6 +11,16 @@ const features: { title: string; body: string; icon: string }[] = [
     body: "Run the floor from your phone: pause the clock, add time, record rebuys and add-ons, update player counts — with the live clock in your hand. Included with Pro and every Event Pass.",
   },
   {
+    icon: "👥",
+    title: "Staff phones — new",
+    body: "Share the remote with your floor staff by QR code — no accounts, no passwords. Floor staff can record rebuys, add-ons and player counts, and every entry is logged with their name. Their phones stop working when the tournament ends. 2 staff phones with an Event Pass, 5 with Pro.",
+  },
+  {
+    icon: "⏱️",
+    title: "Players' clock — free",
+    body: "Put a QR code on the table and every player can follow the clock, blinds and next break on their own phone. Read-only, no sign-in, on every plan — including free.",
+  },
+  {
     icon: "🖥️",
     title: "Mac, Windows, iPad — any screen",
     body: "It runs in the browser, so it works on a Mac, a Windows PC, a Chromebook or a tablet. No install, no updates to chase. Cast it to the big TV in the room.",
@@ -67,6 +77,7 @@ const tiers: Tier[] = [
       "Full blind timer, breaks & antes",
       "Rebuys, add-ons and chips in play",
       "Winners card at the end of the night",
+      "Players' clock — a QR code players scan to follow the clock",
       "Cloud sync across your devices",
     ],
   },
@@ -80,7 +91,7 @@ const tiers: Tier[] = [
     href: APP_URL,
     points: [
       "Every Pro feature, for one tournament",
-      "Remote Control included",
+      "Remote Control, plus 2 staff phones",
       "Buy it now, use it when the event comes",
       "Four or more events a year? Pro costs less",
     ],
@@ -97,6 +108,7 @@ const tiers: Tier[] = [
     points: [
       "Every feature, every tournament",
       "Remote Control — run the floor from your phone",
+      "Up to 5 staff phones per tournament",
       "Your company, venue and splash image on the clock",
       "Dealers, final table and finishing places",
       "Full tournament report with money raised",
@@ -117,6 +129,7 @@ const compare: { group: string; rows: Row[] }[] = [
       { label: "Tournaments", free: "Unlimited", pass: "1 event", pro: "Unlimited" },
       { label: "Rebuys, add-ons and chips in play", free: true, pass: true, pro: true },
       { label: "Winners and payouts", free: true, pass: true, pro: true },
+      { label: "Players' clock on players' own phones (QR code)", free: true, pass: true, pro: true },
       { label: "Cloud sync across devices", free: true, pass: true, pro: true },
     ],
   },
@@ -134,6 +147,7 @@ const compare: { group: string; rows: Row[] }[] = [
     group: "Running the floor",
     rows: [
       { label: "Remote Control from your phone", free: false, pass: true, pro: true },
+      { label: "Staff phones, shared by QR code", free: false, pass: "2", pro: "5" },
       { label: "Dealers and staff, with final-table dealer", free: false, pass: true, pro: true },
       { label: "Final table and finishing places", free: false, pass: true, pro: true },
       { label: "Full tournament report", free: false, pass: true, pro: true },
@@ -146,6 +160,14 @@ const faqs: { q: string; a: string }[] = [
   {
     q: "What is Remote Control?",
     a: "Included with Pro and every Event Pass, it turns your phone into the tournament director's remote. Pause or resume the clock, add time, record rebuys and add-ons, and update player counts from anywhere in the room — with the live level, blinds and countdown right on your phone. It runs in your phone's browser; nothing to install.",
+  },
+  {
+    q: "Can my floor staff use the remote?",
+    a: "Yes, without sharing your login. Tap Share Remote, pick what they can do, and show them a QR code. Floor staff can record rebuys, add-ons and player counts; a Director phone gets everything your remote has; a Display phone just shows the clock. Each entry is logged with the staff member's name, you can remove a phone at any time, and every staff phone stops working when the tournament ends. An Event Pass includes 2 staff phones, Pro includes 5.",
+  },
+  {
+    q: "What is the players' clock?",
+    a: "A read-only clock any player can open by scanning a QR code — on a table tent or the TV. It shows the level, blinds and antes, time left, the next level, time to the break and players remaining. No sign-in and no buttons, and it never shows money or names. It is included on every plan, free included, and stops when the tournament ends.",
   },
   {
     q: "What is free?",
@@ -319,6 +341,13 @@ export default function Home() {
                 <li className="flex gap-3">
                   <span className="text-emerald-400">✓</span>
                   <span>Every action is logged to the tournament record</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-emerald-400">✓</span>
+                  <span>
+                    Share it with your floor staff by QR code — no passwords,
+                    each phone limited to what you allow, removed with one tap
+                  </span>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-emerald-400">✓</span>
