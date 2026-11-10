@@ -87,12 +87,12 @@ const tiers: Tier[] = [
     price: "$49",
     unit: "/ event",
     sub: "up to 30 players · $89 up to 75 · $149 unlimited",
-    cta: "Run one event",
-    href: APP_URL,
+    cta: "Coming soon — get notified",
+    href: "mailto:hello@feltpro.app?subject=Notify%20me%3A%20FeltPro%20Event%20Pass",
     points: [
       "Every Pro feature, for one tournament",
       "Remote Control, plus 2 staff phones",
-      "Buy it now, use it when the event comes",
+      "Buy ahead, use it when the event comes",
       "Four or more events a year? Pro costs less",
     ],
   },
@@ -102,8 +102,8 @@ const tiers: Tier[] = [
     price: "$349",
     unit: "/ yr",
     sub: "unlimited tournaments · any number of players",
-    cta: "Go Pro",
-    href: APP_URL,
+    cta: "Coming soon — get notified",
+    href: "mailto:hello@feltpro.app?subject=Notify%20me%3A%20FeltPro%20Pro",
     featured: true,
     points: [
       "Every feature, every tournament",
@@ -428,6 +428,9 @@ export default function Home() {
             Home games are free. Pay once for a single event, or go Pro and
             run unlimited tournaments. No setup fees.
           </p>
+          <p className="mx-auto mt-4 inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-sm font-semibold text-emerald-300">
+            Paid plans open soon. Home games are free today.
+          </p>
         </div>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -442,7 +445,7 @@ export default function Home() {
             >
               {t.featured && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-emerald-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-black">
-                  Most Popular
+                  Best value
                 </span>
               )}
               <h3 className="text-lg font-semibold">{t.name}</h3>
@@ -481,8 +484,8 @@ export default function Home() {
               Enterprise <span className="font-normal text-white/40">— Custom</span>
             </h3>
             <p className="mt-1 max-w-2xl text-sm text-white/55">
-              For casino chains and multi-room operators: multiple staff
-              accounts, white-label branding, SSO, and dedicated support.
+              For casino chains, leagues and multi-room operators: volume
+              pricing, custom terms, and help getting set up.
             </p>
           </div>
           <a
